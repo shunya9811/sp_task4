@@ -8,6 +8,3 @@ jobs:
 
             - name: Run Bash script
             - run: ./test.sh
-
-            - run: echo "test completed"
-
