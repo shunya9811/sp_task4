@@ -1,12 +1,11 @@
 name: actions-trial
 on: [push]
 jobs:
-	check-bats-version:
-		runs-on: ubuntu-latest
-		steps:
-			- uses: actions/checkout@v3
-			
-			- name: Run Bash script
-			- run: ./test.sh
-			- run: echo "test completed"
+    check-bats-version:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Run Bash script
+            - run: ./test.sh
+            - run: echo "test completed"
 
