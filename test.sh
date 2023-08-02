@@ -47,6 +47,16 @@ echo "45" > /tmp/$$-ans
 ./gcd.sh 135 45 > /tmp/$$-result
 !(diff /tmp/$$-ans /tmp/$$-result) && echo "error in test8">> /tmp/$$-error.log
 
+## test9 入力 123456 654321  -> 答え 3
+echo "3" > /tmp/$$-ans
+./gcd.sh 123456 654321 > /tmp/$$-result
+!(diff /tmp/$$-ans /tmp/$$-result) && echo "error in test9">> /tmp/$$-error.log
+
+## test10 入力 9876543 5432109  -> 答え 3
+echo "3" > /tmp/$$-ans
+./gcd.sh 9876543 5432109 > /tmp/$$-result
+!(diff /tmp/$$-ans /tmp/$$-result) && echo "error in test10">> /tmp/$$-error.log
+
 
 if [ -f /tmp/$$-error.log ]; then
         cat /tmp/$$-error.log 1>&2
