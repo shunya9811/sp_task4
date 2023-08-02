@@ -18,12 +18,17 @@
 CMDNAME=`basename $0`
 
 function gcd() {
-    if [ $(($1 % $2)) -eq 0 ]; then
-        return $2
-    fi
-    return $(gcd $2 $(($1 % $2)))
-}
+    local a=$1
+    local b=$2
 
+    while [ $b -ne 0 ]; do
+        remainder=$((a % b))
+        a=$b
+        b=$remainder
+    done
+
+    echo "$a"
+}
 
 if [ $# -ne 2 ]; then
     echo "USAGE: $CMDNAME num1 num2" 1>&2
@@ -40,4 +45,3 @@ done
 
 
 gcd $1 $2
-echo $?
